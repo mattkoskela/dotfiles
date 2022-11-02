@@ -3,6 +3,20 @@ export PATH
 
 alias pip=pip3
 
+venv() {
+  case $1 in
+    create)
+      python3 -m venv .venv
+      ;;
+    activate)
+      source .venv/bin/activate
+      ;;
+    *)
+      echo "unknown venv command"
+      ;;
+  esac
+}
+
 goto() {
   case $1 in
     code)
